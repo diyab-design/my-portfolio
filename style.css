@@ -1,0 +1,786 @@
+:root {
+  --cream: #f2e8d5;
+  --paper: #f4efe6;
+  --header: #2a2f27;
+  --border: #22271f;
+  --text: #635d3f;
+  --olive: #454b32;
+  --grey: #55584b;
+  --line: #9e8d61;
+  --brown: #8d7460;
+}
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; }
+body {
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "Courier Prime", monospace;
+}
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+.desktop {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--cream) url("assets/bg-grid.svg") center/cover no-repeat;
+}
+.top-bar {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 3.1% 23px;
+}
+.all-folders, .theme-toggle, .desktop-folder, .social-bar button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: #000;
+}
+.all-folders {
+  width: 66px;
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+}
+.all-folders img { width: 44px; height: 36px; }
+.all-folders span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.site-title {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  margin: 0;
+  color: var(--grey);
+  font-family: "Jost", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.theme-toggle {
+  width: 55px;
+  min-height: 44px;
+  color: var(--grey);
+  text-align: center;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+}
+.theme-icon { display: block; position: relative; width: 55px; height: 24px; }
+.theme-icon:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 3px;
+  width: 45px;
+  height: 18px;
+  border: 1.5px solid var(--grey);
+  border-radius: 20px;
+}
+.theme-icon span {
+  position: absolute;
+  z-index: 1;
+  left: 4px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--grey);
+  transition: transform .18s ease;
+}
+.dark .theme-icon span { transform: translateX(31px); background: var(--cream); }
+.hero {
+  position: absolute;
+  left: 21.2%;
+  top: 16%;
+  width: 58.3%;
+  height: 68%;
+}
+.portfolio-word {
+  position: absolute;
+  left: 9.5%;
+  top: 23%;
+  width: 81%;
+  height: 30%;
+}
+.portfolio-word img {
+  position: absolute;
+  left: -.18%;
+  top: -.66%;
+  width: 100.36%;
+  height: 101.32%;
+  display: block;
+}
+.diya {
+  position: absolute;
+  z-index: 2;
+  left: 3%;
+  top: 7%;
+  color: #000;
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: clamp(36px, 4.2vw, 60px);
+}
+.diya span {
+  display: block;
+  white-space: nowrap;
+  text-align: center;
+  line-height: normal;
+  text-shadow: 0 4px 2px rgba(0,0,0,.5);
+  transform: rotate(-10.66deg);
+}
+.desktop-folder {
+  position: absolute;
+  z-index: 4;
+  width: 95px;
+  min-height: 91px;
+  transition: transform .15s ease, filter .15s ease;
+}
+.desktop-folder:hover { transform: translateY(-5px); filter: brightness(.96); }
+.desktop-folder img { display: block; width: 95px; height: 68px; object-fit: contain; }
+.desktop-folder span {
+  display: block;
+  margin-top: 3px;
+  font-family: "IBM Plex Mono", monospace;
+  color: #000;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.profile-folder { left: 12.7%; top: 31%; }
+.works-folder { left: 6.1%; top: 53.8%; }
+.tools-folder { left: 83.5%; top: 20.9%; }
+.resume-folder { left: 91.3%; top: 43.7%; }
+.experience-folder { left: 81.9%; top: 66.3%; }
+.social-bar {
+  position: absolute;
+  z-index: 6;
+  left: 38.1%;
+  bottom: 4.7%;
+  display: flex;
+  align-items: center;
+  gap: 39px;
+}
+.social-bar a, .social-bar button {
+  width: 94px;
+  height: 97px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  transition: transform .15s ease;
+}
+.social-bar a:nth-child(2), .social-bar button { width: 90px; height: 92px; }
+.social-bar a:hover, .social-bar button:hover { transform: translateY(-5px); }
+.social-bar img { width: 100%; height: 100%; object-fit: contain; }
+
+.window, .project-window {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  background: var(--paper);
+  overflow: hidden;
+}
+.window-bar {
+  height: 65px;
+  background: var(--header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5%;
+  color: white;
+}
+.window-path {
+  font-size: clamp(16px, 1.9vw, 27px);
+  white-space: nowrap;
+}
+.window-controls { display: flex; gap: 10px; }
+.window-controls button {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid rgba(0,0,0,.25);
+  border-radius: 4px;
+  color: white;
+  font-size: 22px;
+  line-height: 20px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.45);
+}
+.window-controls .minimize { background: #72ad78; }
+.window-controls .close { background: #e87d78; }
+.window-content {
+  height: calc(100% - 65px);
+  background: url("assets/bg-grid.svg") center/cover no-repeat, var(--paper);
+  overflow: auto;
+}
+
+.page-heading { margin: 36px 0 0 6.4%; }
+.page-heading h1, .contact-copy h1, .about-main h1, .toolbox-content h1,
+.experience-heading h1, .project-detail-content h1 {
+  margin: 0;
+  color: var(--olive);
+  font-family: "Pixelify Sans", monospace;
+  font-size: clamp(58px, 6vw, 86px);
+  line-height: 1;
+  font-weight: 600;
+}
+.page-heading p, .contact-intro, .toolbox-content > p, .experience-heading p {
+  margin: 12px 0 0;
+  font-size: clamp(16px, 1.7vw, 24px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+.works-content { padding-bottom: 30px; }
+.work-grid {
+  width: min(1257px, calc(100% - 180px));
+  height: calc(100% - 180px);
+  margin: 34px auto 0;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 418px));
+  justify-content: center;
+  gap: 36px 64px;
+  padding: 14px 20px 40px;
+}
+.project-card {
+  min-height: 270px;
+  border: 2px solid var(--olive);
+  border-radius: 38px;
+  background: var(--paper);
+  padding: 22px 20px;
+  box-shadow: 6px 6px 3px rgba(0,0,0,.25);
+  transition: transform .15s ease, background .15s ease;
+  cursor: pointer;
+}
+.project-card:hover { transform: translateY(-4px); background: #f8f1df; }
+.project-card img { display: block; width: 100%; height: 105px; object-fit: cover; border-radius: 22px; background: #31523f; }
+.project-card h2 { margin: 14px 0 8px; font-family: "IBM Plex Mono", monospace; font-size: clamp(14px, 1.35vw, 19px); }
+.project-card p { margin: 0; font-family: "IBM Plex Mono", monospace; font-size: clamp(13px, 1.25vw, 18px); color: #111; }
+
+.contact-content { position: relative; }
+.contact-copy { position: absolute; left: 8.2%; top: 7%; width: 52%; }
+.contact-intro { max-width: 745px; }
+.contact-photo {
+  position: absolute;
+  right: 13.5%;
+  top: 5%;
+  width: 248px;
+  height: 297px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+}
+.contact-details {
+  position: absolute;
+  left: 6.9%;
+  top: 41%;
+  display: grid;
+  gap: 14px;
+  width: 41%;
+}
+.contact-detail {
+  min-height: 155px;
+  border: 2px solid var(--header);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 28px;
+  background: rgba(244,239,230,.55);
+  font-family: "IBM Plex Mono", monospace;
+}
+.contact-detail strong { font-size: 34px; color: var(--header); }
+.contact-detail a, .contact-detail span {
+  align-self: flex-start;
+  margin-top: 8px;
+  border: 2px solid var(--olive);
+  border-radius: 25px;
+  background: var(--paper);
+  box-shadow: 7px 7px 0 var(--olive);
+  padding: 8px 18px;
+  color: var(--olive);
+  font-size: clamp(13px, 1.5vw, 20px);
+  text-decoration: none;
+}
+.contact-form {
+  position: absolute;
+  right: 4%;
+  bottom: 3%;
+  width: 44.3%;
+  min-height: 452px;
+  border: 2px solid var(--header);
+  border-radius: 25px;
+  padding: 14px 30px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(244,239,230,.78);
+}
+.contact-form h2 { margin: 0; font-family: "IBM Plex Mono", monospace; color: var(--header); font-size: 34px; }
+.contact-form label { font-family: "IBM Plex Mono", monospace; color: var(--olive); font-weight: 700; font-size: 25px; }
+.contact-form input, .contact-form textarea {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin-top: 3px;
+  border: 2px solid var(--olive);
+  border-radius: 17px;
+  background: var(--paper);
+  padding: 8px 12px;
+}
+.contact-form textarea { height: 95px; resize: none; }
+.contact-form button {
+  align-self: flex-end;
+  border: 2px solid var(--olive);
+  border-radius: 18px;
+  background: var(--olive);
+  color: var(--paper);
+  padding: 8px 16px;
+}
+
+.about-content { position: relative; background: var(--cream); }
+.about-photo {
+  position: absolute;
+  left: 8%;
+  top: 12%;
+  width: 27%;
+  height: 42%;
+  object-fit: cover;
+  object-position: top;
+  transform: rotate(-5deg);
+  box-shadow: 0 8px 10px rgba(0,0,0,.15);
+  border: 12px solid white;
+}
+.about-main { position: absolute; left: 51%; top: 8%; width: 43%; }
+.about-main h1 { font-size: clamp(58px, 5vw, 80px); }
+.about-tags { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 20px; }
+.about-tags span, .about-badges span {
+  border: 2px solid var(--header);
+  border-radius: 12px;
+  padding: 6px 12px;
+  background: var(--paper);
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-size: clamp(12px, 1.3vw, 18px);
+}
+.about-main p { width: 75%; margin: 46px 0 0 0; text-align: center; font-weight: 700; }
+.education { position: absolute; left: 5.8%; bottom: 8%; width: 43%; }
+.education h2 { display: inline-block; margin: 0; border-radius: 18px; background: #777a55; color: white; padding: 8px 28px; }
+.education h3 { margin: 24px 0 4px; font-family: "IBM Plex Mono", monospace; }
+.education p { margin: 4px 0; font-weight: 700; }
+.about-badges { position: absolute; right: 5%; bottom: 8%; width: 40%; }
+.about-badges span { position: absolute; }
+.about-badges span:nth-child(1) { right: 5%; top: 0; }
+.about-badges span:nth-child(2) { right: 45%; top: 100px; color: #a08b10; }
+.about-badges span:nth-child(3) { right: 55%; bottom: -170px; }
+.about-badges span:nth-child(4) { right: 10%; bottom: -145px; }
+.about-badges span:nth-child(5) { right: 0; bottom: -210px; }
+
+.toolbox-content { padding: 44px 3.5%; }
+.toolbox-content h1 { font-size: clamp(48px, 5vw, 72px); }
+.tool-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+.tool-grid article {
+  min-width: 260px;
+  max-width: 380px;
+  min-height: 180px;
+  border: 2px solid var(--header);
+  border-radius: 24px;
+  background: rgba(244,239,230,.85);
+  padding: 18px 20px;
+  flex: 1 1 300px;
+}
+.tool-grid h2 { margin: 0 0 18px; border-radius: 12px; background: #d7cdb1; padding: 8px 14px; font-family: "IBM Plex Mono", monospace; }
+.tool-list { display: flex; flex-wrap: wrap; gap: 14px; font-family: "IBM Plex Mono", monospace; font-weight: 700; }
+.experience-content { position: relative; background: var(--cream); padding: 38px 5%; }
+.experience-heading { margin-bottom: 20px; }
+.experience-heading h1 { font-size: clamp(58px, 5vw, 78px); }
+.timeline {
+  position: relative;
+  max-width: 820px;
+  margin-left: 20px;
+  padding-left: 44px;
+  border-left: 3px solid var(--olive);
+}
+.timeline article { position: relative; min-height: 105px; }
+.timeline article:before {
+  content: "";
+  position: absolute;
+  left: -54px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--olive);
+  border-radius: 50%;
+  background: var(--paper);
+}
+.timeline h2 { margin: 0; font-family: "IBM Plex Mono", monospace; font-size: clamp(16px, 1.5vw, 22px); }
+.timeline p { margin: 6px 0 0; font-family: "IBM Plex Mono", monospace; font-weight: 700; }
+.timeline span { display: inline-block; margin-top: 7px; border: 1.5px solid var(--olive); border-radius: 12px; background: #ece0a5; padding: 2px 9px; font-size: 11px; }
+.resume-content { display: flex; justify-content: center; padding: 34px 7%; }
+.resume-content img { width: min(100%, 700px); height: auto; object-fit: contain; box-shadow: -12px 12px 9px rgba(0,0,0,.25); }
+
+.folder-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 34px 5%;
+  background: var(--paper);
+}
+.folder-list button {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 72px;
+  border: 0;
+  background: transparent;
+  color: #000;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 20px;
+  text-align: left;
+}
+.folder-list button:hover { background: rgba(85,88,75,.08); }
+.folder-list img { width: 46px; height: 33px; }
+.project-detail-content {
+  height: calc(100% - 65px);
+  display: grid;
+  grid-template-columns: 42% 58%;
+  align-items: center;
+  gap: 38px;
+  padding: 45px 6%;
+  background: var(--paper);
+}
+.project-detail-content img { width: 100%; max-height: 520px; object-fit: cover; border: 2px solid var(--olive); border-radius: 24px; }
+.project-detail-content h1 { font-size: clamp(42px, 5vw, 72px); }
+.project-detail-content p { max-width: 720px; font-family: "IBM Plex Mono", monospace; font-size: clamp(16px, 1.8vw, 24px); color: #111; }
+.project-back { position: absolute; top: 82px; left: 6%; border: 0; background: transparent; color: var(--olive); font-weight: 700; }
+
+.dark {
+  --cream: #242820;
+  --paper: #343a2d;
+  --header: #171a16;
+  --text: #d9cfae;
+  --olive: #d2c794;
+  --grey: #d9cfae;
+}
+body.dark .desktop { background-color: var(--cream); }
+body.dark .window-content, body.dark .project-detail-content { background-color: var(--paper); }
+body.dark .project-card, body.dark .contact-form, body.dark .contact-detail, body.dark .contact-detail a,
+body.dark .contact-detail span { background: var(--paper); color: #f4efe6; }
+
+@media (max-width: 900px) {
+  .desktop { min-height: 620px; }
+  .top-bar { height: 106px; padding: 0 7%; }
+  .site-title { bottom: 32px; font-size: 17px; }
+  .hero { left: 21.2%; top: 16%; width: 58.3%; }
+  .profile-folder { left: 12.7%; top: 31%; transform: scale(.89); transform-origin: left top; }
+  .works-folder { left: 6.1%; top: 53.8%; transform: scale(.89); transform-origin: left top; }
+  .tools-folder { left: 83.5%; top: 20.9%; transform: scale(.89); transform-origin: right top; }
+  .resume-folder { left: 91.3%; top: 43.7%; transform: scale(.89); transform-origin: right top; }
+  .experience-folder { left: 81.9%; top: 66.3%; transform: scale(.89); transform-origin: right top; }
+  .social-bar { left: 38.1%; bottom: 4.7%; gap: 35px; transform: scale(.89); transform-origin: bottom center; }
+  .work-grid { width: calc(100% - 70px); height: calc(100% - 155px); grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+  .contact-copy { left: 5%; top: 5%; width: 55%; }
+  .contact-photo { right: 6%; width: 180px; height: 230px; }
+  .contact-details { left: 5%; top: 36%; width: 38%; }
+  .contact-detail { min-height: 118px; padding: 14px; }
+  .contact-detail strong { font-size: 24px; }
+  .contact-detail a, .contact-detail span { font-size: 13px; padding: 6px 10px; }
+  .contact-form { right: 3%; bottom: 4%; width: 50%; min-height: 390px; }
+  .contact-form h2 { font-size: 24px; }
+  .contact-form label { font-size: 18px; }
+}
+@media (max-width: 600px) {
+  .desktop { min-height: 100vh; }
+  .top-bar { height: 82px; padding: 0 18px 12px; }
+  .all-folders { width: 55px; transform: scale(.82); transform-origin: left bottom; }
+  .site-title { bottom: 30px; font-size: 12px; }
+  .theme-toggle { transform: scale(.78); transform-origin: right bottom; }
+  .hero { left: 1%; top: 22%; width: 98%; height: 50%; }
+  .diya { left: 16%; top: 2%; font-size: 31px; }
+  .portfolio-word { left: 1%; top: 30%; width: 98%; }
+  .profile-folder { left: 7%; top: 26%; transform: scale(.72); transform-origin: left top; }
+  .works-folder { left: 5%; top: 52%; transform: scale(.72); transform-origin: left top; }
+  .tools-folder { left: 78%; top: 22%; transform: scale(.72); transform-origin: right top; }
+  .resume-folder { left: 78%; top: 43%; transform: scale(.72); transform-origin: right top; }
+  .experience-folder { left: 72%; top: 64%; transform: scale(.72); transform-origin: right top; }
+  .social-bar { left: 50%; bottom: 4%; width: 244px; gap: 12px; transform: translateX(-50%) scale(.75); transform-origin: bottom; }
+  .window-bar, .project-window .window-bar { height: 52px; padding: 0 12px; }
+  .window-path { max-width: 72%; font-size: 12px; overflow: hidden; text-overflow: ellipsis; }
+  .window-controls button { width: 26px; height: 26px; font-size: 18px; }
+  .window-content { height: calc(100% - 52px); }
+  .page-heading { margin: 22px 16px 0; }
+  .page-heading h1, .contact-copy h1, .about-main h1, .toolbox-content h1, .experience-heading h1 { font-size: 42px; }
+  .page-heading p { font-size: 13px; }
+  .work-grid { width: 100%; height: calc(100% - 125px); grid-template-columns: 1fr; gap: 18px; padding: 12px 16px 40px; }
+  .project-card { min-height: 0; border-radius: 24px; padding: 14px; }
+  .project-card img { height: 105px; }
+  .project-card h2, .project-card p { font-size: 13px; }
+  .contact-copy { left: 5%; top: 3%; width: 58%; }
+  .contact-intro { display: none; }
+  .contact-photo { width: 112px; height: 150px; right: 5%; top: 16px; }
+  .contact-details { left: 5%; top: auto; bottom: 7%; width: 42%; gap: 8px; }
+  .contact-detail { min-height: 82px; padding: 8px; border-radius: 15px; }
+  .contact-detail strong { font-size: 16px; }
+  .contact-detail a, .contact-detail span { max-width: 100%; font-size: 9px; padding: 5px 7px; overflow-wrap: anywhere; }
+  .contact-form { width: 48%; min-height: 360px; right: 5%; bottom: 7%; padding: 12px; }
+  .contact-form h2 { font-size: 18px; }
+  .contact-form label { font-size: 13px; }
+  .contact-form input { height: 38px; }
+  .contact-form textarea { height: 70px; }
+  .about-photo { left: 5%; top: 8%; width: 38%; height: 34%; border-width: 7px; }
+  .about-main { left: 48%; top: 5%; width: 48%; }
+  .about-tags { gap: 6px; margin-top: 10px; }
+  .about-tags span { font-size: 9px; padding: 4px 6px; }
+  .about-main p { width: 100%; margin-top: 24px; font-size: 11px; }
+  .education { left: 5%; bottom: 8%; width: 60%; }
+  .education h2 { font-size: 14px; padding: 5px 14px; }
+  .education h3 { font-size: 11px; }
+  .education p { font-size: 9px; }
+  .about-badges { display: none; }
+  .toolbox-content { padding: 22px 16px; }
+  .toolbox-content > p { font-size: 12px; }
+  .tool-grid { gap: 12px; margin-top: 18px; }
+  .tool-grid article { min-width: 0; min-height: 120px; flex-basis: 155px; padding: 10px; }
+  .tool-grid h2 { font-size: 13px; margin-bottom: 10px; }
+  .tool-list { gap: 7px; font-size: 9px; }
+  .experience-content { padding: 24px 18px; }
+  .experience-heading p { font-size: 12px; }
+  .timeline { margin-left: 8px; padding-left: 28px; }
+  .timeline article { min-height: 92px; }
+  .timeline article:before { left: -38px; width: 14px; height: 14px; }
+  .timeline h2 { font-size: 12px; }
+  .timeline p { font-size: 10px; }
+  .resume-content { padding: 18px 16px; }
+  .folder-list { gap: 4px; padding: 20px 24px; }
+  .folder-list button { height: 58px; font-size: 14px; }
+  .folder-list img { width: 46px; }
+  .project-detail-content { height: calc(100% - 52px); grid-template-columns: 1fr; gap: 18px; padding: 74px 20px 20px; align-content: start; }
+  .project-detail-content img { max-height: 280px; }
+  .project-detail-content h1 { font-size: 38px; }
+  .project-detail-content p { font-size: 14px; }
+  .project-back { top: 68px; left: 20px; }
+}
+/* Homepage coordinates are measured from the five design frames. */
+.desktop {height:100dvh; min-height:0; width:100%; container-type:size; background-position:left top;}
+.desktop .hero,.desktop .top-bar,.desktop .social-bar {position:static; display:contents;}
+.desktop .all-folders span {display:none;}
+.desktop .all-folders img,.desktop .social-bar img {width:100%;height:100%;}
+.desktop .theme-icon {width:100%;background:url("assets/theme.svg") center/contain no-repeat;}
+.desktop .theme-icon:before,.desktop .theme-icon span {display:none;}
+.dark .theme-icon {transform:scaleX(-1);filter:brightness(2);}
+.desktop .desktop-folder {display:flex; flex-direction:column; align-items:center; justify-content:flex-start;}
+.desktop .desktop-folder img {height:auto;max-width:none;}
+.desktop .desktop-folder span {line-height:1.34; margin-top:0.2em;}
+.desktop .desktop-folder:focus-visible,.desktop .desktop-folder:hover {transform:none;}
+@media(hover:hover){.desktop-folder:not(.profile-folder):hover img{content:url("assets/folder-open.png");}}
+.desktop-folder:not(.profile-folder):focus-visible img{content:url("assets/folder-open.png");}
+.desktop :focus-visible,.window :focus-visible,.project-window :focus-visible{outline:3px solid #718536;outline-offset:3px;}
+
+@media (min-width: 1360px) {
+  .desktop .all-folders {position:absolute; left:3.0208%; top:6.3333%; width:4.5833cqw; height:6cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .site-title {position:absolute; left:42.8819%; top:9.1111%; width:15cqw; height:3.2222cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;font-size:1.3889cqw;}
+  .desktop .theme-toggle {position:absolute; left:93.1597%; top:7.4444%; width:3.8194cqw; height:4.8889cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .experience-folder {position:absolute; left:81.9444%; top:66.3333%; width:5.9722cqw; height:10.1111cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .resume-folder {position:absolute; left:91.25%; top:43.6667%; width:5.9722cqw; height:10.1111cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .tools-folder {position:absolute; left:83.4722%; top:20.8889%; width:6.5972cqw; height:10.1111cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .works-folder {position:absolute; left:6.1111%; top:53.7778%; width:6.5972cqw; height:10.1111cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .profile-folder {position:absolute; left:12.7083%; top:31%; width:6.5972cqw; height:9.7778cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .diya {position:absolute; left:26.875%; top:31.8889%; width:11.5604cqw; height:16.0144cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;font-size:4.1667cqw;display:grid;place-items:center;}
+  .desktop .social-bar a:nth-child(1) {position:absolute; left:38.125%; top:84.5556%; width:6.5278cqw; height:10.7778cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar a:nth-child(2) {position:absolute; left:47.3611%; top:84.8333%; width:6.25cqw; height:10.2222cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar button {position:absolute; left:56.3194%; top:84.8333%; width:6.25cqw; height:10.2222cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .portfolio-word {position:absolute; left:30.5556%; top:41.5556%; width:39.5139cqw; height:16.8444cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop {background-size:100.7014cqw 100cqh;}
+  .desktop .desktop-folder img {width:6.5972cqw;height:7.5556cqh;}
+  .desktop .desktop-folder span {font-size:1.0417cqw;}
+  .desktop .theme-toggle {font-size:0.8333cqw;}
+}
+
+@media (min-width: 901px) and (max-width: 1359px) {
+  .desktop .all-folders {position:absolute; left:3.0211%; top:6.3338%; width:4.5836cqw; height:6cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .site-title {position:absolute; left:42.882%; top:9.0838%; width:15cqw; height:3.25cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;font-size:1.3889cqw;}
+  .desktop .theme-toggle {position:absolute; left:93.1602%; top:7.445%; width:3.8195cqw; height:4.8887cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .experience-folder {position:absolute; left:81.9445%; top:66.3337%; width:5.9719cqw; height:10.0137cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .resume-folder {position:absolute; left:91.25%; top:43.6662%; width:5.9719cqw; height:10.0137cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .tools-folder {position:absolute; left:83.4727%; top:20.8888%; width:6.5969cqw; height:10.0137cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .works-folder {position:absolute; left:6.1109%; top:53.7775%; width:6.5969cqw; height:10.0137cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .profile-folder {position:absolute; left:12.7086%; top:31%; width:6.5969cqw; height:9.7775cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .diya {position:absolute; left:26.875%; top:31.8813%; width:11.5891cqw; height:16.0487cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;font-size:4.1667cqw;display:grid;place-items:center;}
+  .desktop .social-bar a:nth-child(1) {position:absolute; left:38.125%; top:84.555%; width:6.5281cqw; height:10.7775cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar a:nth-child(2) {position:absolute; left:47.3609%; top:84.8337%; width:6.25cqw; height:10.2225cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar button {position:absolute; left:56.3195%; top:84.8337%; width:6.25cqw; height:10.2225cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .portfolio-word {position:absolute; left:30.5555%; top:41.555%; width:39.5141cqw; height:16.845cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop {background-size:100.7016cqw 100cqh;}
+  .desktop .desktop-folder img {width:6.5969cqw;height:7.5552cqh;}
+  .desktop .desktop-folder span {font-size:1.0417cqw;}
+  .desktop .theme-toggle {font-size:0.8333cqw;}
+}
+
+@media (min-width: 383px) and (max-width: 599px) {
+  .desktop .all-folders {position:absolute; left:4.6154%; top:2.8436%; width:14.0462cqw; height:5.3104cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .site-title {position:absolute; left:29.2308%; top:4.3839%; width:41.5385cqw; height:2.6066cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;font-size:3.8462cqw;}
+  .desktop .theme-toggle {position:absolute; left:81.2821%; top:2.8436%; width:14.1026cqw; height:5.2133cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar a:nth-child(1) {position:absolute; left:21.1179%; top:91.9336%; width:15.4256cqw; height:7.3555cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar a:nth-child(2) {position:absolute; left:42.9436%; top:92.1232%; width:14.7692cqw; height:6.9763cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar button {position:absolute; left:64.1128%; top:92.1232%; width:14.7692cqw; height:6.9763cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .diya {position:absolute; left:9.9077%; top:37.1161%; width:22.3436cqw; height:8.9064cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;font-size:8cqw;display:grid;place-items:center;}
+  .desktop .resume-folder {position:absolute; left:13.0769%; top:59.0047%; width:22.0513cqw; height:10.782cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .experience-folder {position:absolute; left:68.4615%; top:64.8104%; width:22.0513cqw; height:10.782cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .profile-folder {position:absolute; left:20.7692%; top:11.7299%; width:24.359cqw; height:10.4265cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .works-folder {position:absolute; left:34.1026%; top:75.3555%; width:24.359cqw; height:10.782cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .tools-folder {position:absolute; left:57.1795%; top:23.8152%; width:24.359cqw; height:10.782cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .portfolio-word {position:absolute; left:16.9744%; top:42.4882%; width:75.8667cqw; height:9.34cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop {background-size:371.8205cqw 106.6351cqh;}
+  .desktop .desktop-folder img {width:24.359cqw;height:8.0569cqh;}
+  .desktop .desktop-folder span {font-size:3.8462cqw;}
+  .desktop .theme-toggle {font-size:3.0769cqw;}
+}
+
+@media (max-width: 382px) {
+  .desktop .all-folders {position:absolute; left:4.616%; top:2.8436%; width:14.0453cqw; height:5.3079cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .site-title {position:absolute; left:29.2%; top:4.3842%; width:41.6cqw; height:2.5862cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;font-size:3.8462cqw;}
+  .desktop .theme-toggle {position:absolute; left:81.2827%; top:2.8436%; width:14.1013cqw; height:5.2106cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar a:nth-child(1) {position:absolute; left:21.1173%; top:92.0825%; width:15.4267cqw; height:7.351cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar a:nth-child(2) {position:absolute; left:42.944%; top:92.2722%; width:14.768cqw; height:6.9729cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar button {position:absolute; left:64.112%; top:92.2722%; width:14.768cqw; height:6.9729cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .diya {position:absolute; left:9.6453%; top:37.1441%; width:22.3013cqw; height:8.8264cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;font-size:8cqw;display:grid;place-items:center;}
+  .desktop .resume-folder {position:absolute; left:13.0773%; top:59.0222%; width:22.0507cqw; height:10.7475cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .experience-folder {position:absolute; left:68.4613%; top:64.8276%; width:22.0507cqw; height:10.7475cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .profile-folder {position:absolute; left:20.768%; top:11.7328%; width:24.36cqw; height:10.4212cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .works-folder {position:absolute; left:34.4%; top:75.6158%; width:24.36cqw; height:10.7475cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .tools-folder {position:absolute; left:57.1787%; top:23.8325%; width:24.36cqw; height:10.7475cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .portfolio-word {position:absolute; left:16.9733%; top:42.4901%; width:75.8667cqw; height:9.335cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop {background-size:371.8213cqw 106.5739cqh;}
+  .desktop .desktop-folder img {width:24.36cqw;height:8.0526cqh;}
+  .desktop .desktop-folder span {font-size:3.8462cqw;}
+  .desktop .theme-toggle {font-size:3.0769cqw;}
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .desktop .all-folders {position:absolute; left:2.8438%; top:2.8438%; width:8.6536cqw; height:5.3105cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .site-title {position:absolute; left:37.2396%; top:4.3838%; width:25.5208cqw; height:2.5391cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;font-size:2.3697cqw;}
+  .desktop .theme-toggle {position:absolute; left:88.4674%; top:2.8438%; width:8.6888cqw; height:5.2129cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar a:nth-child(1) {position:absolute; left:32.2057%; top:91.6514%; width:9.5039cqw; height:7.3555cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar a:nth-child(2) {position:absolute; left:45.6523%; top:91.8408%; width:9.099cqw; height:6.9766cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .social-bar button {position:absolute; left:58.6953%; top:91.8408%; width:9.099cqw; height:6.9766cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .diya {position:absolute; left:9.9076%; top:31.6826%; width:22.2591cqw; height:14.4355cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;font-size:8cqw;display:grid;place-items:center;}
+  .desktop .resume-folder {position:absolute; left:13.6719%; top:61.7188%; width:13.5859cqw; height:10.7559cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .experience-folder {position:absolute; left:72.694%; top:64.8232%; width:13.5859cqw; height:10.7559cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .profile-folder {position:absolute; left:25.444%; top:11.7295%; width:15.0078cqw; height:10.4268cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .works-folder {position:absolute; left:40.1042%; top:74.4141%; width:15.0078cqw; height:10.7559cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .tools-folder {position:absolute; left:61.8555%; top:23.8281%; width:15.0078cqw; height:10.7559cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop .portfolio-word {position:absolute; left:16.9779%; top:40.3916%; width:75.8659cqw; height:15.1602cqh; min-height:0; bottom:auto; margin:0; padding:0; transform:none;}
+  .desktop {background-size:229.0833cqw 106.6348cqh;}
+  .desktop .desktop-folder img {width:15.0078cqw;height:8.0568cqh;}
+  .desktop .desktop-folder span {font-size:2.3697cqw;}
+  .desktop .theme-toggle {font-size:1.8957cqw;}
+}
+
+[hidden]{display:none!important;}
+.window-path {display:flex;align-items:center;min-width:0;overflow-x:auto;white-space:nowrap;scrollbar-width:thin;}
+.window-path button {font:inherit;color:inherit;border:0;padding:4px 0;background:none;}
+.window-path button:hover {text-decoration:underline;}
+.window-controls {flex:none;}
+.window-content {overscroll-behavior:contain;}
+#detailBody {height:calc(100% - var(--bar,65px));overflow:auto;padding:clamp(20px,4vw,56px);background:var(--paper) url("assets/bg-grid.svg") top left / 1450px 900px;}
+.detail-article {max-width:900px;margin:auto;font:16px/1.55 "Courier Prime",monospace;color:var(--text);}
+.detail-article header,.timeline button {border:1.5px solid var(--olive);border-radius:12px;padding:12px 16px;color:var(--text);background:var(--paper);text-align:left;}
+.detail-article h1,.timeline h2 {font:600 clamp(16px,1.6vw,25px)/1.22 "IBM Plex Mono",monospace;margin:0;}
+.detail-article header p {margin:4px 0;}
+.detail-article img {display:block;margin:24px auto;width:auto;height:auto;max-width:100%;max-height:620px;}
+.detail-article p {white-space:pre-line;overflow-wrap:anywhere;}
+.detail-article a {color:inherit;}
+.detail-article time,.timeline time {font:14px "IBM Plex Mono",monospace;display:inline-block;border:1px solid var(--text);background:#bdc87b;color:#34382b;border-radius:12px;padding:2px 8px;}
+.timeline {display:grid;gap:18px;}
+.timeline button {position:relative;width:100%;cursor:pointer;}
+.timeline button:hover,.timeline button:focus-visible,.project-card:focus-visible {box-shadow:4px 4px 0 var(--olive);}
+.timeline button:before {content:"";position:absolute;left:-38px;top:14px;width:14px;height:14px;border:2px solid var(--olive);border-radius:50%;background:var(--paper);}
+.timeline p {margin:.4em 0;}
+.resume-content {display:block;text-align:center;}
+.resume-content button {border:0;background:transparent;padding:0;width:100%;cursor:zoom-in;}
+.resume-content button[aria-pressed=true] {width:max(115%,900px);cursor:zoom-out;}
+.resume-content button img {display:block;max-width:100%;width:100%;height:auto;margin:auto;}
+.dark .desktop-folder span,.dark .diya,.dark .folder-list button,.dark .project-card p,.dark .about-main p {color:var(--text);}
+@media(min-width:901px){
+  .window:not(.maximized),.project-window:not(.maximized){inset:0;margin:auto;width:min(55.556vw,960px);height:min(63.667vh,690px);border:1px solid var(--header);border-radius:10px;box-shadow:8px 10px 24px #181b2033;container-type:inline-size;--bar:42px;}
+  .window:not(.maximized) .window-bar,.project-window:not(.maximized) .window-bar {height:42px;}
+  .window:not(.maximized) .window-content {height:calc(100% - 42px);}
+  .window:not(.maximized) .window-path,.project-window:not(.maximized) .window-path {font-size:16px;}
+  .window:not(.maximized) .page-heading h1,.window:not(.maximized) .experience-heading h1,.window:not(.maximized) .toolbox-content h1,.window:not(.maximized) .about-main h1,.window:not(.maximized) .contact-copy h1 {font-size:clamp(36px,7cqw,62px);}
+  .window:not(.maximized) .work-grid {height:auto;width:100%;padding:18px 7%;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+  .window:not(.maximized) .project-card {min-height:0;padding:14px;border-radius:22px;}
+  .window:not(.maximized) .project-card img {height:72px;}
+  .window:not(.maximized) .project-card h2,.window:not(.maximized) .project-card p {font-size:13px;}
+}
+@media(max-width:900px){
+  .window,.project-window {--bar:57px;}
+  .window-bar {height:var(--bar);padding:0 18px;gap:10px;}
+  .window-content {height:calc(100% - var(--bar));}
+  .window-path {max-width:calc(100% - 55px);font-size:16px;text-overflow:clip;}
+  .window-controls .minimize {display:none;}
+  .window-controls .close {position:relative;}
+  .window-controls .close::after {content:"";position:absolute;inset:-9px;}
+}
+@media screen {
+  .window:not(.maximized) .contact-content,.window:not(.maximized) .about-content {padding:22px clamp(20px,5%,56px) 40px;}
+  .window:not(.maximized) :is(.contact-copy,.contact-photo,.contact-details,.contact-form,.about-photo,.about-main,.education,.about-badges) {position:static;inset:auto;max-width:100%;width:100%;height:auto;margin:0 auto 24px;}
+  .window:not(.maximized) .contact-photo,.window:not(.maximized) .about-photo {display:block;width:min(75%,279px);max-height:280px;object-fit:contain;}
+  .window:not(.maximized) .contact-form {min-height:0;padding:18px;}
+  .window:not(.maximized) .about-main p,.window:not(.maximized) .education p {width:auto;font-size:16px;line-height:1.4;}
+  .window:not(.maximized) .about-badges {display:flex;gap:8px;flex-wrap:wrap;}
+}
+@media(max-width:600px){
+  .works-content {padding:22px 6.15% 40px;}
+  .page-heading {margin:0;}
+  .work-grid {overflow:visible;height:auto;padding:0;margin:24px auto;gap:22px;}
+  .project-card {padding:17px 18px;box-shadow:5px 5px 2.5px #0004;}
+  .project-card img {height:auto;aspect-ratio:303 / 86;}
+  .contact-intro {display:block;font-size:14px;}
+  .detail-article h1 {font-size:19px;}
+  .tool-grid {display:grid;grid-template-columns:1fr;}
+  .tool-grid article {width:100%;min-height:0;padding:18px;}
+  .tool-list {font-size:14px;}
+  .timeline {padding-left:24px;}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0s!important;transition-duration:0s!important;}}
+
+
+.desktop .diya {object-fit:contain;transform:none;}
+.desktop .theme-toggle {white-space:nowrap;}
+.desktop .all-folders:hover img,.desktop .all-folders:focus-visible img {content:url("assets/icons/all-hover.png");}
+.desktop .profile-folder:hover img,.desktop .profile-folder:focus-visible img {content:url("assets/icons/profile-hover.png");height:100%;object-fit:contain;}
+.desktop .profile-folder:hover span,.desktop .profile-folder:focus-visible span {visibility:hidden;}
+.desktop .desktop-folder:hover span,.desktop .desktop-folder:focus-visible span {text-decoration:underline;}
+.desktop .all-folders {align-items:center;justify-content:center;}
+.about-content .about-photo {border:0;box-shadow:none;transform:none;}
+.about-content .about-badges {display:flex;flex-wrap:wrap;justify-content:center;gap:10px;}
+.about-content .about-badges span {position:static;transform:none;}
+.about-content .interests {margin:20px auto 40px;max-width:640px;font:16px/1.45 'Courier Prime',monospace;color:var(--text);}
+.about-content .interests h2 {font-family:'IBM Plex Mono',monospace;}
+.about-content .interests li {margin:.35em 0;}
+.maximized .about-content {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;padding:5%;gap:32px;}
+.maximized .about-content > * {position:static;inset:auto;width:100%;height:auto;margin:0;}
+.maximized .about-photo {max-height:340px;object-fit:contain;}
+.tool-list span {display:inline-flex;flex-direction:column;align-items:center;gap:5px;}
+.tool-list img {display:block;width:40px;height:40px;object-fit:contain;}
+
+.dark .portfolio-word img,.dark .diya {filter:brightness(0) invert(.85);}
+
+.desktop .all-folders img {width:100%;height:100%;object-fit:contain;flex:none;}

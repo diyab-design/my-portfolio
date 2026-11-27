@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diya B - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;600&family=Gloria+Hallelujah&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@400;500;700&family=League+Gothic&family=Lora:wght@400;600&family=Nunito+Sans:wght@400;700&family=Pixelify+Sans:wght@400;500;600;700&family=Poiret+One&family=Raleway:wght@400;600&family=Space+Mono:wght@400;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="prototype.css">
+</head>
+<body>
+  <main class="desktop" id="desktop">
+    <header class="top-bar">
+      <button class="all-folders" data-open="all" aria-label="Open all folders">
+        <img src="assets/v1/drive-folder.svg" alt="">
+        <span>All Folders</span>
+      </button>
+      <p class="site-title">Diya B - Portfolio Website</p>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+        <span class="theme-icon"><span></span></span>
+        <span id="themeLabel">light mode</span>
+      </button>
+    </header>
+
+    <section class="hero" aria-label="Portfolio">
+      <div class="diya" role="img" aria-label="Diya’s"><span>Diya’s</span></div>
+      <div class="portfolio-word"><img src="assets/portfolio-wordmark-isolated.png" alt="PORTFOLIO"></div>
+    </section>
+
+    <button class="desktop-folder profile-folder" data-open="about" aria-label="Open about me">
+      <img src="assets/logo.svg" alt="">
+      <span>about me</span>
+    </button>
+    <button class="desktop-folder works-folder" data-open="works" aria-label="Open my works">
+      <img src="assets/folder-works.svg" alt="">
+      <span>my works</span>
+    </button>
+    <button class="desktop-folder tools-folder" data-open="toolbox" aria-label="Open tool box">
+      <img src="assets/folder-tools.svg" alt="">
+      <span>tool box</span>
+    </button>
+    <button class="desktop-folder resume-folder" data-open="resume" aria-label="Open resume">
+      <img src="assets/folder-resume.svg" alt="">
+      <span>resume.pdf</span>
+    </button>
+    <button class="desktop-folder experience-folder" data-open="experience" aria-label="Open experience">
+      <img src="assets/folder.svg" alt="">
+      <span>experience</span>
+    </button>
+
+    <nav class="social-bar" aria-label="Social links">
+      <a href="https://www.linkedin.com/in/diya-baburaj-aa5281322/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><img src="assets/linkedin.svg" alt=""></a>
+      <a href="https://github.com/diyab-design" target="_blank" rel="noreferrer" aria-label="GitHub"><img src="assets/github.svg" alt=""></a>
+      <button data-open="contact" aria-label="Contact me"><img src="assets/contact.svg" alt=""></button>
+    </nav>
+  </main>
+
+  <section class="window" id="works" aria-label="My Works" hidden>
+    <header class="window-bar"><div class="window-path">C:\Diya B\Portfolio\my works</div><div class="window-controls"><button class="minimize" aria-label="Minimize">&minus;</button><button class="close" aria-label="Close">&times;</button></div></header>
+    <div class="window-content works-content">
+      <div class="page-heading"><h1 class="art-title"><span class="heading-text">My Works</span><img src="assets/v1/works-title.svg" alt=""></h1><p>A collection of projects, designs and things I've built</p></div>
+      <div class="work-grid">
+        <article class="project-card" role="button" data-detail="verda" tabindex="0"><div class="work-thumb"><img src="assets/work-1.png" alt="Verda"></div><h2>Verda - Shop Smart, Shop Green</h2><p>An eco-friendly shopping app concept and business plan</p></article>
+        <article class="project-card" role="button" data-detail="fake-product" tabindex="0"><div class="work-thumb"><img src="assets/work-2.png" alt="Smart Fake Product Detection System"></div><h2>Smart Fake Product Detection System</h2><p>A product-authentication project using QR codes, blockchain simulation, and AI scoring</p></article>
+        <article class="project-card" role="button" data-detail="diabetes" tabindex="0"><div class="work-thumb"><img src="assets/work-3.png" alt="Diabetes Prediction"></div><h2>Diabetes Prediction</h2><p>A machine learning mini project using logistic regression</p></article>
+        <article class="project-card" role="button" data-detail="basket" tabindex="0"><div class="work-thumb"><img src="assets/work-4.png" alt="Market Basket Analysis"></div><h2>Market Basket Analysis</h2><p>Finding products that tend to be purchased together</p></article>
+        <article class="project-card" role="button" data-detail="studysprint" tabindex="0"><div class="work-thumb"><img src="assets/work-5.png" alt="StudySprint"></div><h2>StudySprint</h2><p>A JavaScript project about making study time more focused</p></article>
+        <article class="project-card" role="button" data-detail="dustbin" tabindex="0"><div class="work-thumb"><img src="assets/work-6.png" alt="Smart Dustbin"></div><h2>Smart Dustbin</h2><p>A concept for a mobile bin that detects and catches litter</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="window" id="contact" aria-label="Contact Me" hidden>
+    <header class="window-bar"><div class="window-path">C:\Diya B\Portfolio\Contact Me</div><div class="window-controls"><button class="minimize" aria-label="Minimize">&minus;</button><button class="close" aria-label="Close">&times;</button></div></header>
+    <div class="window-content contact-content">
+      <div class="contact-copy"><h1 class="art-title"><span class="heading-text">Contact Me</span><img src="assets/v1/contact-title.svg" alt=""></h1><p class="contact-intro">Let's connect! I'm always happy to chat about opportunities, collaborations, or just to say hi. Feel free to reach out through any of the details below or send me a message here!</p></div>
+      <img class="contact-photo" src="assets/v1/contact-trim.png" alt="Diya Baburaj">
+      <div class="contact-details">
+        <div class="contact-detail"><strong>Email</strong><a href="mailto:diyababuraj2006@gmail.com">diyababuraj2006@gmail.com</a></div>
+        <div class="contact-detail"><strong>Phone</strong><a href="tel:+918590478848">+91 85904 78848</a></div>
+        <div class="contact-detail"><strong>Location</strong><span>Kerala, India</span></div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <h2>Get in Touch</h2>
+        <label>Name<input name="name" required></label>
+        <label>Email<input name="email" type="email" required></label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="window" id="about" aria-label="About Me" hidden>
+    <header class="window-bar"><div class="window-path">C:\Diya B\Portfolio\about me</div><div class="window-controls"><button class="minimize">&minus;</button><button class="close">&times;</button></div></header>
+    <div class="window-content about-content">
+      <div class="about-photo-wrap" role="img" aria-label="A taped photograph of Diya Baburaj">
+        <div class="about-polaroid"><img src="assets/v1/about-photo-figma.png" alt=""></div>
+        <img class="about-tape" src="assets/v1/about-tape-figma.png" alt="">
+        <img class="about-arrow" src="assets/v1/about-arrow-normal.svg" alt="">
+      </div>
+      <div class="about-main">
+        <h1 class="art-title about-title"><span class="heading-text">Hi, I’m Diya!</span><img src="assets/v1/about-prefix.svg" alt=""><img src="assets/v1/about-name.svg" alt=""></h1>
+        <div class="about-tags"><span>CSE Student</span><span>Data Science</span><span>Creative Thinker</span></div>
+        <p>I like making things, breaking things, figuring things out, and occasionally wondering why I started in the first place.</p>
+      </div>
+      <section class="about-details" aria-label="About details">
+        <div class="education">
+          <img class="education-cap" src="assets/v1/education-cap-normal.svg" alt="">
+          <h2>education</h2>
+          <h3>BTech in Computer Science and Engineering (Data Science)</h3>
+          <p class="education-university"><em>Jain University, Kochi</em><span>2024-2028</span></p>
+          <p class="education-school"><em>Palghat Lions School, Palakkad</em><span>2010-2023</span></p>
+        </div>
+        <div class="about-cutout"><img src="assets/v1/about-cutout-figma.png" alt="Diya Baburaj"></div>
+        <img class="about-arrow3" src="assets/v1/about-arrow3.svg" alt="" aria-hidden="true">
+        <div class="personality-tags" aria-label="A few things about me">
+          <span>20 year old</span><span>Based in Kerala, India</span><span>creative</span><span>empathetic</span><span>coffee enthusiast</span><span>persistent</span><span>organised</span><span>detail-oriented</span>
+        </div>
+        <section class="interests">
+          <h2>interests</h2>
+          <ul>
+            <li><img src="assets/v1/interest-icons/ai-ml.svg" alt="" aria-hidden="true"><span>AI/ML</span></li>
+            <li><img src="assets/v1/interest-icons/ui-ux.svg" alt="" aria-hidden="true"><span>UI/UX &amp; Visual Design</span></li>
+            <li><img src="assets/v1/interest-icons/drawing.svg" alt="" aria-hidden="true"><span>Drawing/Illustrations</span></li>
+            <li><img src="assets/v1/interest-icons/project.svg" alt="" aria-hidden="true"><span>Project Building</span></li>
+            <li><img src="assets/v1/interest-icons/entrepreneurship.svg" alt="" aria-hidden="true"><span>Entrepreneurship</span></li>
+            <li><img src="assets/v1/interest-icons/reading.svg" alt="" aria-hidden="true"><span>Reading</span></li>
+          </ul>
+        </section>
+        <div class="about-story">
+          <p>I'm driven by the possibility of turning ideas into something meaningful. I love the process of learning, experimenting and creating things that bring together technology and creativity.</p>
+          <p>I believe there's always something new to discover, and I'd rather keep exploring than limit myself to what I already know.</p>
+        </div>
+      </section>
+    </div>
+  </section>
+<section class="window" id="toolbox" aria-label="Tool Box" hidden>
+    <header class="window-bar"><div class="window-path">C:\Diya B\Portfolio\tool box</div><div class="window-controls"><button class="minimize">&minus;</button><button class="close">&times;</button></div></header>
+    <div class="window-content toolbox-content">
+      <h1 class="art-title"><span class="heading-text">Tool Box</span><img src="assets/v1/tools-title.svg" alt=""></h1><p>The tools, platforms and tech I use to build, design and experiment.</p>
+      <div class="tool-grid">
+        <article><h2><img alt="" src="assets/v1/development-mark.svg"> Development</h2><div class="tool-list"><span><img src="assets/v1/figma-icons/python.png" alt="">Python</span><span><img src="assets/v1/figma-icons/java.png" alt="">Java</span><span><img src="assets/v1/figma-icons/c.png" alt="">C</span><span><img src="assets/v1/figma-icons/flask.png" alt="">Flask</span></div></article>
+        <article><h2><img alt="" src="assets/v1/data-mark.svg"> Data &amp; AI</h2><div class="tool-list"><span><img src="assets/v1/figma-icons/jupyter.png" alt="">Jupyter</span><span><img src="assets/v1/figma-icons/pandas.png" alt="">Pandas</span><span><img src="assets/v1/figma-icons/sklearn.png" alt="">Sklearn</span><span><img src="assets/v1/figma-icons/numpy.png" alt="">NumPy</span></div></article>
+        <article><h2><img alt="" src="assets/v1/design-mark.svg"> Design</h2><div class="tool-list"><span><img src="assets/v1/figma-icons/figma.png" alt="">Figma</span><span><img src="assets/v1/figma-icons/blender.png" alt="">Blender</span><span><img src="assets/v1/figma-icons/illustrator.png" alt="">Illustrator</span><span><img src="assets/v1/figma-icons/photoshop.png" alt="">Photoshop</span></div></article>
+        <article><h2><img alt="" src="assets/v1/productivity-mark.svg"> Productivity</h2><div class="tool-list"><span><img src="assets/v1/figma-icons/notion.png" alt="">Notion</span><span><img src="assets/v1/figma-icons/github.png" alt="">GitHub</span><span><img src="assets/v1/figma-icons/drive.png" alt="">Drive</span></div></article>
+        <article><h2><img alt="" src="assets/v1/other-tools-mark.svg"> Other Tools</h2><div class="tool-list"><span><img src="assets/v1/figma-icons/firebase.png" alt="">Firebase</span><span><img src="assets/v1/figma-icons/mysql.png" alt="">MySQL</span><span><img src="assets/v1/figma-icons/sqlite.png" alt="">SQLite</span><span><img src="assets/v1/figma-icons/opencv.png" alt="">OpenCV</span><span><img src="assets/v1/figma-icons/raspberry-pi.png" alt="">Raspberry pi</span><span><img src="assets/v1/figma-icons/hadoop.png" alt="">Hadoop</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="window" id="experience" aria-label="Experience" hidden>
+    <header class="window-bar"><div class="window-path">C:\Diya B\Portfolio\experience</div><div class="window-controls"><button class="minimize">&minus;</button><button class="close">&times;</button></div></header>
+    <div class="window-content experience-content">
+      <div class="experience-heading"><h1 class="art-title"><span class="heading-text">Experience</span><img src="assets/v1/experience-title.svg" alt=""></h1><p>Roles, responsibilities and experiences that have shaped my journey so far.</p></div>
+      <div class="timeline">
+        <button type="button" data-detail="manus-ai-volunteer"><h2>Manus.ai - Volunteer</h2><p>Manus.ai | JAIN University, Kochi</p><time>2026</time></button>
+        <button type="button" data-detail="yugantra-tech-fest-events-lead"><h2>Yugantra Tech Fest - Events Lead</h2><p>GDG | JAIN University, Kochi</p><time>2026</time></button>
+        <button type="button" data-detail="figma-workshop-facilitator"><h2>Figma Workshop - Facilitator</h2><p>JAIN University, Kochi</p><time>2026</time></button>
+        <button type="button" data-detail="sih-participant"><h2>SIH - Participant</h2><p>JAIN University, Kochi</p><time>2026</time></button>
+        <button type="button" data-detail="ieee-air-organizer"><h2>IEEE AIR - Organizer</h2><p>IEEE | JAIN University, Kochi</p><time>2026</time></button>
+        <button type="button" data-detail="social-media-content-design-freelancer"><h2>Social Media Content Design - Freelancer</h2><p>Fiverr</p><time>2026- Present</time></button>
+        <button type="button" data-detail="useless-projects-hackathon-participant"><h2>Useless Projects Hackathon - Participant</h2><p>TinkerHub | JAIN University, Kochi</p><time>2026</time></button>
+        <button type="button" data-detail="inceptrix-24hr-hackathon-participant"><h2>Inceptrix 24Hr Hackathon - Participant</h2><p>JAIN University, Banglore</p><time>2026</time></button>
+        <button type="button" data-detail="tink-her-hack-participant"><h2>Tink Her Hack - Participant</h2><p>TinkerHub | JAIN University, Kochi </p><time>2026</time></button>
+        <button type="button" data-detail="qbit-24hr-hackathon-organizer"><h2>QBit 24Hr Hackathon - Organizer</h2><p>IEEE | Future Summit | JAIN University, Kochi</p><time>2026</time></button>
+        <button type="button" data-detail="future-summit-technical-lead"><h2>Future Summit - Technical Lead</h2><p>JAIN University, Kochi</p><time>2026</time></button>
+        <button type="button" data-detail="guinness-world-records-speech-relay"><h2>Guinness World Records - Speech Relay</h2><p>JAIN University, Kochi</p><time>2026</time></button>
+        <button type="button" data-detail="portfolio-workshop-organizer"><h2>Portfolio Workshop - Organizer</h2><p>IEEE | JAIN University, Kochi</p><time>2025</time></button>
+        <button type="button" data-detail="linkedin-workshop-organizer"><h2>LinkedIn Workshop - Organizer</h2><p>IEEE | JAIN University, Kochi</p><time>2025</time></button>
+        <button type="button" data-detail="ieee-yess-2025-participant"><h2>IEEE YESS 2025 - Participant</h2><p>IEEE | NIT Calicut</p><time>2025 </time></button>
+        <button type="button" data-detail="ieee-student-branch-chair"><h2>IEEE Student Branch Chair</h2><p>IEEE | JAIN University, Kochi</p><time>2025 - present</time></button>
+        <button type="button" data-detail="paw-summit-volunteer"><h2>Paw Summit - Volunteer</h2><p>JAIN University, Kochi</p><time>2025</time></button>
+        <button type="button" data-detail="future-summit-venue-coordinator"><h2>Future Summit - Venue Coordinator</h2><p>JAIN University, Kochi</p><time>2025</time></button>
+        <button type="button" data-detail="aixplore-design-lead"><h2>AiXplore - Design Lead</h2><p>AI Club | JAIN University, Kochi</p><time>2024 - 2025</time></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="window" id="resume" aria-label="Resume" hidden>
+    <header class="window-bar"><div class="window-path">C:\Diya B\Portfolio\resume.pdf</div><div class="window-controls"><button class="minimize">&minus;</button><button class="close">&times;</button></div></header>
+    <div class="window-content resume-content"><button type="button" class="resume-zoom-bar" id="resumeZoomBtn" aria-label="Zoom in résumé">+ Zoom in</button><div class="resume-viewport"><button type="button" id="resumeZoom" aria-label="Zoom résumé" aria-pressed="false"><img src="assets/resume.png" alt="Diya’s résumé"></button></div></div>
+  </section>
+
+  <section class="window" id="all" aria-label="All Folders" hidden>
+    <header class="window-bar"><div class="window-path">C:\Diya B\Portfolio</div><div class="window-controls"><button class="minimize">&minus;</button><button class="close">&times;</button></div></header>
+    <div class="window-content folder-list">
+      <button data-open="experience"><img src="assets/folder.svg" alt=""><span>experience</span></button>
+      <button data-open="works"><img src="assets/folder-works.svg" alt=""><span>my works</span></button>
+      <button data-open="resume"><img src="assets/folder-resume.svg" alt=""><span>resume.pdf</span></button>
+      <button data-open="toolbox"><img src="assets/folder-tools.svg" alt=""><span>tool box</span></button>
+    </div>
+  </section>
+
+  <section class="project-window" id="projectDetail" aria-label="Project detail" hidden>
+    <header class="window-bar"><div class="window-path" id="projectPath">C:\Diya B\Portfolio\my works</div><div class="window-controls"><button class="minimize"></button><button class="close" aria-label="Close">&times;</button></div></header>
+    <div id="detailBody"></div>
+  </section>
+
+  <template id="view-fake-product" data-parent="works">
+    <article class="detail-article"><header><h1>Smart Fake Product Detection System</h1><p>A product-authentication project using QR codes, blockchain simulation, and AI scoring</p></header>
+      <p>Counterfeit products can be hard to spot before purchase. Packaging can look convincing, product details can be copied, and shoppers often have no quick way to check whether an item is genuine.
+This project explores a simple way to make product verification more accessible: connect a product to a QR code, check its registered details, and use a blockchain simulation and AI score as additional signals in the authenticity check.</p>
+      <p>The idea
+The system is designed to help users check a product’s authenticity through a scan and a clear result. The QR code acts as a quick link to the product’s identity and registered information. The blockchain simulation represents a record of product information that is harder to alter unnoticed, while AI scoring is intended to support the verification decision.
+The goal is to make the check understandable to an everyday user, while showing how these technologies could work together in a product-authentication system.</p>
+      <img loading="lazy" src="assets/details/587-20746.png" alt="Smart Fake Product Detection System">
+      <p><a href="https://project-verda.onrender.com/" target="_blank" rel="noreferrer">https://project-verda.onrender.com/</a></p>
+      <p>How the proposed flow works
+A product is registered with identifying details.
+A QR code is linked to that product record.
+A user scans the code to request a check.
+The system compares the scan or product information with its registered record.</p>
+      <p>The blockchain simulation represents the product record or its history.
+An AI score contributes to the authenticity assessment.
+The user sees the verification result.</p>
+      <p>Technical approach
+The project brings together three parts:
+QR code identification: gives each registered product a scannable identifier.
+Blockchain simulation: demonstrates how product records could be tracked in a tamper-evident chain. The word simulation matters: I haven’t found evidence that this project used a live public blockchain.
+AI scoring: provides an additional score for the verification process. The materials I found don’t identify the model, training data, accuracy, or evaluation results, so those should be added only if you can verify them from your code or report.</p>
+    </article>
+  </template>
+
+  <template id="view-basket" data-parent="works">
+    <article class="detail-article"><header><h1>Market Basket Analysis</h1><p>Finding products that tend to be purchased together</p></header>
+      <p>For this data mining mini project, I analyzed grocery transactions to find products that frequently appear in the same basket. I used the Apriori algorithm to identify associations between items and explored how those patterns could support product placement, bundles, and cross-selling.
+The idea is straightforward: when a retailer understands what customers often buy together, they can make shopping more convenient and make better-informed merchandising decisions.</p>
+      <p>The problem
+A grocery store records many individual purchases, but those transactions can also reveal combinations of products that customers regularly buy together.
+Market basket analysis looks for these patterns. Instead of asking only which products sell the most, it asks which products tend to appear together in the same shopping trip.</p>
+      <p>How the analysis works
+Each transaction is treated as a basket of items. The Apriori algorithm searches for groups of items that occur frequently, then forms association rules such as:
+If a basket contains item A, it may also contain item B.
+The project uses three common measures to describe a rule:
+Support: How often the item combination appears across all transactions.
+Confidence: How often item B appears when item A appears.
+Lift: Whether A and B appear together more often than they would if they were unrelated.
+Lift above 1 suggests a positive association in the data. It doesn’t prove that one product causes customers to buy the other.</p>
+      <p>What I did
+My project work focused on:
+Working with grocery transaction data.
+Applying the Apriori algorithm to find frequent item combinations.
+Generating association rules from those combinations.
+Interpreting the rules for possible retail uses, including product placement, bundles, and cross-selling.
+The project report details I have don’t specify the dataset’s size, the exact support or confidence thresholds, or the strongest item-pair results. Add those from your report or notebook if you want to include them.</p>
+      <p>What a retailer could do with the results
+Patterns like these can help a retailer explore:
+Placing related products near each other.
+Suggesting complementary items.
+Creating bundle offers.
+Planning promotions around common combinations.
+These are possible uses of the analysis. The recommendations should be based on the actual rules found in the project, and any real business decision would need to consider factors such as stock, seasonality, and profit margin too.</p>
+    </article>
+  </template>
+
+  <template id="view-studysprint" data-parent="works">
+    <article class="detail-article"><header><h1>StudySprint</h1><p>A JavaScript project about making study time more focused</p></header>
+      <p>StudySprint is a JavaScript project built around the idea of breaking study time into focused “sprints.” It explores how a simple digital tool can help students approach studying in smaller, more manageable sessions.</p>
+      <p>The idea
+Studying can feel easier to start when the next step is clear and the work is broken into focused blocks. StudySprint takes that idea as its starting point and turns it into a small student-focused project.</p>
+      <p>What I Build
+A single-page interface with sections for adding tasks, viewing the task list, using the timer, and checking completion progress.
+JavaScript interactions to add tasks, toggle them between complete and incomplete, and delete them.
+A 25-minute timer with start, pause, and reset controls, plus an alert when the session ends.
+A simple visual layout using HTML and CSS: a purple gradient background, white content cards, and styled task rows and buttons.</p>
+      <p>How it works
+Type a study task and select Add Task.
+Click a task to mark it complete or incomplete, or select Delete to remove it.
+Check the progress count to see completed tasks versus all tasks.
+Start the timer for a focus session. Pause it when needed, or reset it to 25 minutes.</p>
+      <p>What I learned
+This project gave me a chance to practice JavaScript through a student-focused idea. It also helped me think about how a focused, simple interface can make it easier to get started and stay organized.
+Project details
+Type: Personal project
+Language shown on GitHub: JavaScript
+Repository: StudySprint</p>
+    </article>
+  </template>
+
+  <template id="view-dustbin" data-parent="works">
+    <article class="detail-article"><header><h1>Smart Dustbin</h1><p>A concept for a mobile bin that detects and catches litter</p></header>
+      <p>This project started with something easy to spot in public parks: people sometimes throw rubbish toward a bin and miss, leaving litter on the ground. A regular bin depends on people getting close enough and aiming properly. This concept explores a more active approach—a smart bin that can detect thrown litter and move to catch it.</p>
+      <p>The idea
+The proposed bin combines sensors, a camera-based AI system, and a mobile mechanism. Sensors detect an object approaching, while image recognition helps identify whether it appears to be waste. If the system recognizes likely litter, the bin can move toward the object and try to catch it.
+The goal is to make waste disposal easier in parks and other public spaces, and to help reduce litter around bins.</p>
+      <p>The goal is to make waste disposal easier in parks and other public spaces, and to help reduce litter around bins.
+How the concept works
+Sensors detect an object thrown within the bin’s detection area.
+A camera captures the object for image recognition.
+The AI system identifies whether the object appears to be waste.
+If it passes the system’s checks, the bin moves to intercept and catch it.
+The system ignores objects it doesn’t recognize as litter.
+This is the proposed flow, not a verified working sequence from a completed prototype.</p>
+      <p>Technology direction
+The project conversations identified Raspberry Pi as the intended on-device computer and Ultralytics YOLO as the image-recognition approach.
+In the proposed setup:
+The Raspberry Pi would coordinate detection and movement.
+A camera would provide images for the AI model.
+Sensors would help detect nearby or moving objects.
+A motorized base would let the bin move.
+The AI system would help distinguish likely waste from other objects.
+The specific sensors, camera, motors, power system, and software implementation haven’t been confirmed. The project chats also don’t document a trained model, tested detection accuracy, or a working IoT dashboard, so those shouldn’t be presented as completed features.</p>
+    </article>
+  </template>
+
+  <template id="view-diabetes" data-parent="works">
+    <article class="detail-article"><header><h1>Diabetes Prediction</h1><p>A machine learning mini project using logistic regression</p></header>
+      <p>For this project, I explored how machine learning can use health-related measurements to classify diabetes outcomes. I worked with the Pima Indians Diabetes dataset, cleaned and explored the data, prepared it for modeling, and trained a logistic regression classifier.
+The project gave me hands-on practice with a full introductory machine learning workflow: understanding a dataset, preparing features, training a model, and evaluating its predictions.</p>
+      <p>The problem
+Diabetes risk is influenced by multiple health factors, and it can be useful to explore how those factors relate to an outcome in a dataset. This project treats diabetes prediction as a binary classification problem: based on a set of recorded measurements, predict one of two outcome classes.
+The goal was to build and evaluate a learning model for the dataset—not to diagnose people or replace medical care.</p>
+      <p>The dataset
+The project used the Pima Indians Diabetes dataset. Its predictor columns include measurements such as pregnancies, glucose, blood pressure, skin thickness, insulin, BMI, diabetes pedigree function, and age. The outcome column indicates the recorded diabetes class.
+The dataset contains 768 observations and is limited to women aged 21 or older of Pima Indian heritage. That makes the dataset useful for a focused learning exercise, but it also limits how broadly a model trained on it can be applied.</p>
+      <p>What I did
+My project work covered the main stages of a machine learning workflow:
+Explored the dataset to understand its columns and outcome.
+Prepared the data for modeling through preprocessing.
+Trained a logistic regression classifier.
+Evaluated the model using classification metrics.
+Reviewed the results as a project exercise in binary classification.</p>
+      <p>How the model works
+Logistic regression estimates the likelihood of an observation belonging to one of two classes. In this project, it uses the selected health measurements to estimate the diabetes outcome represented in the dataset.
+The model’s output is a classification based on patterns in the training data. It should be understood as an educational prediction, not a clinical diagnosis or a reliable assessment for people outside the dataset’s population.</p>
+    </article>
+  </template>
+
+  <template id="view-verda" data-parent="works">
+    <article class="detail-article"><header><h1>Verda - Shop Smart, Shop Green</h1><p>An eco-friendly shopping app concept and business plan</p></header>
+      <p>Verda is a concept for a shopping app that helps people discover products made with sustainability in mind. The idea is to bring vetted eco-friendly products into one place—from sustainable fashion to reusable household items—and make the discovery process more engaging with mini-games and rewards.
+The project was developed as a transdisciplinary group project, combining technology, business, design, and marketing. Its theme connects to the UN Sustainable Development Goals for sustainable cities and communities, and responsible consumption and production.</p>
+      <p>The problem
+People are increasingly aware of the environmental impact of what they buy, but it can be hard to find trustworthy places to shop more sustainably. Eco-friendly products are often mixed in with conventional products, leaving customers to do the filtering and research themselves.
+Verda’s proposed answer is a dedicated shopping experience focused on sustainable products, supported by a product-vetting checklist and clear product discovery.</p>
+      <img loading="lazy" src="assets/details/587-20859.png" alt="Verda - Shop Smart, Shop Green">
+      <img loading="lazy" src="assets/details/587-20860.jpg" alt="Verda - Shop Smart, Shop Green">
+      <img loading="lazy" src="assets/details/587-20862.png" alt="Verda - Shop Smart, Shop Green">
+      <img loading="lazy" src="assets/details/587-20863.png" alt="Verda - Shop Smart, Shop Green">
+      <img loading="lazy" src="assets/details/587-20865.png" alt="Verda - Shop Smart, Shop Green">
+      <img loading="lazy" src="assets/details/587-20866.png" alt="Verda - Shop Smart, Shop Green">
+      <img loading="lazy" src="assets/details/587-20868.png" alt="Verda - Shop Smart, Shop Green">
+      <p>The idea
+The concept brings together:
+A curated catalog of eco-friendly products
+Product vetting based on a checklist informed by global sustainability standards
+Product categories such as eco-friendly fashion and reusable household items
+Mini-games and a spin wheel to make browsing more interactive
+In-app coins or rewards that could be used for bonus spins or game boosts
+The aim is to make sustainable shopping easier to explore, while helping users learn more about why sustainability matters.</p>
+      <p>Business Pan
+Verda was designed as a low-cost concept with several possible revenue streams:
+Commissions from sellers
+Subscription plans for sellers who want to list products
+Ads and sponsored product placements
+Optional in-app coin purchases for extra spins or game boosts
+The report identifies Gen Z and Millennial shoppers as a promising audience for sustainable products. It also describes potential value for small-scale sustainable sellers, who could gain a focused place to reach customers.
+These are proposed business-model elements from the project plan, not confirmed revenue or market results.</p>
+      <p>Technology and product thinking
+The report frames Verda as an app concept with a user-friendly interface, a product catalog, and gamification. It discusses the technical work in terms of app development, backend planning, and game logic, but it does not specify a programming language, framework, database, or deployed system.
+The product challenge was to make the games engaging and to build trust in the product listings. The report says the team tested prototypes with users to refine the game mechanics and created a product-vetting checklist to guide sustainability review.</p>
+    </article>
+  </template>
+
+  <template id="view-manus-ai-volunteer" data-parent="experience">
+    <article class="detail-article"><header><h1>Manus.ai - Volunteer</h1><p>Manus.ai | JAIN University, Kochi</p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-20891.png" alt="Manus.ai - Volunteer">
+      <p>Attended Meet Manus 2.0 in Kochi, exploring the Manus AI community and networking with attendees, IEEE members, and other guests.
+The event brought people together to explore AI agents and practical Manus workflows at JAIN University Kochi. <a href="https://luma.com/on01gnam" target="_blank" rel="noreferrer">Event details</a></p>
+      <img loading="lazy" src="assets/details/587-20893.png" alt="Manus.ai - Volunteer">
+    </article>
+  </template>
+
+  <template id="view-inceptrix-24hr-hackathon-participant" data-parent="experience">
+    <article class="detail-article"><header><h1>Inceptrix 24Hr Hackathon - Participant</h1><p>JAIN University, Banglore</p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-20913.png" alt="Inceptrix 24Hr Hackathon - Participant">
+      <p>Participated in INCEPTRIX 2.0, a 24-hour innovation hackathon at JAIN University, Bengaluru, focused on developing technology-driven solutions to real-world challenges. <a href="https://set.jainuniversity.ac.in/events/inceptrix-hackathon-2026" target="_blank" rel="noreferrer">Event details</a></p>
+    </article>
+  </template>
+
+  <template id="view-ieee-yess-2025-participant" data-parent="experience">
+    <article class="detail-article"><header><h1>IEEE YESS 2025 - Participant</h1><p>IEEE | NIT Calicut</p><time>2025 </time></header>
+      <img loading="lazy" src="assets/details/587-20934.png" alt="IEEE YESS 2025 - Participant">
+      <p>Participated in IEEE YESS 2025 at NIT Calicut, a summit bringing engineering students together for sessions on technology, innovation, and leadership. <a href="https://nitc.ac.in/upcoming-events/ieee-yearly-engineering-students-summit-yess-2025-on-20th-september-2025-at-nit-calicut" target="_blank" rel="noreferrer">Event details</a></p>
+    </article>
+  </template>
+
+  <template id="view-ieee-student-branch-chair" data-parent="experience">
+    <article class="detail-article"><header><h1>IEEE Student Branch Chair</h1><p>IEEE | JAIN University, Kochi</p><time>2025 - present</time></header>
+      <img loading="lazy" src="assets/details/587-20955.png" alt="IEEE Student Branch Chair">
+      <p>Serving as Chair of the IEEE Student Branch at JAIN University, Kochi, leading a student community focused on technical learning, professional development, and collaboration.</p>
+      <img loading="lazy" src="assets/details/587-20957.png" alt="IEEE Student Branch Chair">
+    </article>
+  </template>
+
+  <template id="view-paw-summit-volunteer" data-parent="experience">
+    <article class="detail-article"><header><h1>Paw Summit - Volunteer</h1><p>JAIN University, Kochi</p><time>2025</time></header>
+      <img loading="lazy" src="assets/details/587-20977.png" alt="Paw Summit - Volunteer">
+      <p>Volunteered at Paw Summit 2025 at JAIN University, Kochi, supporting a pet festival that brought together pet owners, animal lovers, and pet-care professionals. About Paw Summit 2025</p>
+      <img loading="lazy" src="assets/details/587-20979.png" alt="Paw Summit - Volunteer">
+    </article>
+  </template>
+
+  <template id="view-future-summit-venue-coordinator" data-parent="experience">
+    <article class="detail-article"><header><h1>Future Summit - Venue Coordinator</h1><p>JAIN University, Kochi</p><time>2025</time></header>
+      <img loading="lazy" src="assets/details/587-20999.png" alt="Future Summit - Venue Coordinator">
+      <p>Served as Venue Coordinator for the Summit of Future 2025 at JAIN University, Kochi, helping coordinate on-site venue operations for the week-long event. Summit details</p>
+    </article>
+  </template>
+
+  <template id="view-aixplore-design-lead" data-parent="experience">
+    <article class="detail-article"><header><h1>AiXplore - Design Lead</h1><p>AI Club | JAIN University, Kochi</p><time>2024 - 2025</time></header>
+      <img loading="lazy" src="assets/details/587-21020.png" alt="AiXplore - Design Lead">
+      <p>Served as Design Lead for AiXplore, JAIN University Kochi’s AI Club, creating visual designs to support the club’s activities and promote student engagement with AI.</p>
+      <img loading="lazy" src="assets/details/587-21022.png" alt="AiXplore - Design Lead">
+    </article>
+  </template>
+
+  <template id="view-future-summit-technical-lead" data-parent="experience">
+    <article class="detail-article"><header><h1>Future Summit - Technical Lead</h1><p>JAIN University, Kochi</p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-21042.png" alt="Future Summit - Technical Lead">
+      <p>Served as Technical Lead for Future Summit 2026 at JAIN University, Kochi, supporting the event’s technical coordination and managing the event systems that supported the managing the event systems that supported the summit. About Future Summit</p>
+      <img loading="lazy" src="assets/details/587-21044.png" alt="Future Summit - Technical Lead">
+    </article>
+  </template>
+
+  <template id="view-guinness-world-records-speech-relay" data-parent="experience">
+    <article class="detail-article"><header><h1>Guinness World Records - Speech Relay</h1><p>JAIN University, Kochi</p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-21064.png" alt="Guinness World Records - Speech Relay">
+      <p>Participated as one of 401 speakers in “Speak for the Future,” a relay that set the Guinness World Records title for most people in a speech relay at Future Summit 2026. Guinness World Records</p>
+      <img loading="lazy" src="assets/details/587-21066.png" alt="Guinness World Records - Speech Relay">
+      <img loading="lazy" src="assets/details/587-21067.jpg" alt="Guinness World Records - Speech Relay">
+    </article>
+  </template>
+
+  <template id="view-portfolio-workshop-organizer" data-parent="experience">
+    <article class="detail-article"><header><h1>Portfolio Workshop - Organizer</h1><p>IEEE | JAIN University, Kochi</p><time>2025</time></header>
+      <img loading="lazy" src="assets/details/587-21087.png" alt="Portfolio Workshop - Organizer">
+      <p>Organized an IEEE portfolio website workshop at JAIN University, Kochi, featuring IBM software engineer Advaith Narayanan. The session introduced students to building a digital identity and showcasing their work through a personal portfolio website.</p>
+      <img loading="lazy" src="assets/details/587-21089.png" alt="Portfolio Workshop - Organizer">
+    </article>
+  </template>
+
+  <template id="view-linkedin-workshop-organizer" data-parent="experience">
+    <article class="detail-article"><header><h1>LinkedIn Workshop - Organizer</h1><p>IEEE | JAIN University, Kochi</p><time>2025</time></header>
+      <img loading="lazy" src="assets/details/587-21109.png" alt="LinkedIn Workshop - Organizer">
+      <p>Organized LinkedIn Ignite, an IEEE professional development session at JAIN University, Kochi. The workshop covered building a strong LinkedIn profile, showcasing skills, and networking with recruiters and industry professionals.</p>
+      <img loading="lazy" src="assets/details/587-21111.png" alt="LinkedIn Workshop - Organizer">
+    </article>
+  </template>
+
+  <template id="view-qbit-24hr-hackathon-organizer" data-parent="experience">
+    <article class="detail-article"><header><h1>QBit 24Hr Hackathon - Organizer</h1><p>IEEE | Future Summit | JAIN University, Kochi</p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-21131.png" alt="QBit 24Hr Hackathon - Organizer">
+      <p>Organized QBit, a 24-hour hackathon held as part of Future Summit 2026 in collaboration with IEEE at JAIN University, Kochi, bringing teams together to build and present technology solutions. Future Summit 2026</p>
+      <img loading="lazy" src="assets/details/587-21133.png" alt="QBit 24Hr Hackathon - Organizer">
+      <img loading="lazy" src="assets/details/587-21134.jpg" alt="QBit 24Hr Hackathon - Organizer">
+      <img loading="lazy" src="assets/details/587-21135.jpg" alt="QBit 24Hr Hackathon - Organizer">
+    </article>
+  </template>
+
+  <template id="view-tink-her-hack-participant" data-parent="experience">
+    <article class="detail-article"><header><h1>Tink Her Hack - Participant</h1><p>TinkerHub | JAIN University, Kochi </p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-21155.png" alt="Tink Her Hack - Participant">
+      <p>Participated in INCEPTRIX 2.0, a 24-hour innovation hackathon at JAIN University, Bengaluru, focused on developing technology-driven solutions to real-world challenges. <a href="https://set.jainuniversity.ac.in/events/inceptrix-hackathon-2026" target="_blank" rel="noreferrer">Event details</a></p>
+      <img loading="lazy" src="assets/details/587-21157.png" alt="Tink Her Hack - Participant">
+      <img loading="lazy" src="assets/details/587-21158.jpg" alt="Tink Her Hack - Participant">
+      <img loading="lazy" src="assets/details/587-21159.jpg" alt="Tink Her Hack - Participant">
+    </article>
+  </template>
+
+  <template id="view-yugantra-tech-fest-events-lead" data-parent="experience">
+    <article class="detail-article"><header><h1>Yugantra Tech Fest - Events Lead</h1><p>GDG | JAIN University, Kochi</p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-21179.png" alt="Yugantra Tech Fest - Events Lead">
+      <p>Served as Events Lead for Yugantra 2026 at JAIN University, Kochi, a tech fest featuring 17 events across technology, workshops, experiences, and gaming. Yugantra 2026
+Coordinated a Google Developer Groups workshop at Yugantra 2026, arranging the session with three GDG executive committee members, who led a hands-on workshop on building AI agents with Gemini.</p>
+      <img loading="lazy" src="assets/details/587-21181.png" alt="Yugantra Tech Fest - Events Lead">
+      <img loading="lazy" src="assets/details/587-21182.jpg" alt="Yugantra Tech Fest - Events Lead">
+      <img loading="lazy" src="assets/details/587-21183.jpg" alt="Yugantra Tech Fest - Events Lead">
+    </article>
+  </template>
+
+  <template id="view-figma-workshop-facilitator" data-parent="experience">
+    <article class="detail-article"><header><h1>Figma Workshop - Facilitator</h1><p>JAIN University, Kochi</p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-21203.png" alt="Figma Workshop - Facilitator">
+      <p>Facilitated a Figma workshop for third-semester BTech students, covering the basics of Figma. Participants created button components, designed a simple UI layout, and built a prototype.</p>
+      <img loading="lazy" src="assets/details/587-21205.png" alt="Figma Workshop - Facilitator">
+      <img loading="lazy" src="assets/details/587-21206.jpg" alt="Figma Workshop - Facilitator">
+    </article>
+  </template>
+
+  <template id="view-sih-participant" data-parent="experience">
+    <article class="detail-article"><header><h1>SIH - Participant</h1><p>JAIN University, Kochi</p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-21226.png" alt="SIH - Participant">
+      <p>Participated in the Smart India Hackathon internal round at JAIN University, Kochi, collaborating with a team to develop a solution to a real-world problem. SIH 2026 at JAIN Kochi</p>
+      <img loading="lazy" src="assets/details/587-21228.png" alt="SIH - Participant">
+    </article>
+  </template>
+
+  <template id="view-useless-projects-hackathon-participant" data-parent="experience">
+    <article class="detail-article"><header><h1>Useless Projects Hackathon - Participant</h1><p>TinkerHub | JAIN University, Kochi</p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-21248.png" alt="Useless Projects Hackathon - Participant">
+      <p>Participated in TinkerHub’s Useless Projects Hackathon at JAIN University, Kochi, joining fellow makers for a creative, hands-on project experience. About Useless Projects</p>
+      <img loading="lazy" src="assets/details/587-21250.png" alt="Useless Projects Hackathon - Participant">
+    </article>
+  </template>
+
+  <template id="view-ieee-air-organizer" data-parent="experience">
+    <article class="detail-article"><header><h1>IEEE AIR - Organizer</h1><p>IEEE | JAIN University, Kochi</p><time>2026</time></header>
+      <img loading="lazy" src="assets/details/587-21270.png" alt="IEEE AIR - Organizer">
+      <p>Organized IEEE AIR (Aara Ivarokke), an introductory networking and icebreaker session for first- and second-year BTech and BCA students to meet the IEEE community and learn about IEEE.</p>
+      <img loading="lazy" src="assets/details/587-21272.png" alt="IEEE AIR - Organizer">
+      <img loading="lazy" src="assets/details/587-21273.jpg" alt="IEEE AIR - Organizer">
+      <img loading="lazy" src="assets/details/587-21274.jpg" alt="IEEE AIR - Organizer">
+      <img loading="lazy" src="assets/details/587-21275.jpg" alt="IEEE AIR - Organizer">
+    </article>
+  </template>
+
+  <template id="view-social-media-content-design-freelancer" data-parent="experience">
+    <article class="detail-article"><header><h1>Social Media Content Design - Freelancer</h1><p>Fiverr</p><time>2026- Present</time></header>
+      <img loading="lazy" src="assets/details/587-21295.png" alt="Social Media Content Design - Freelancer">
+      <p>Created branded social media content for freelance clients, designing posts and graphics tailored to each brand’s visual identity. View my Fiverr profile</p>
+      <img loading="lazy" src="assets/details/587-21297.png" alt="Social Media Content Design - Freelancer">
+      <img loading="lazy" src="assets/details/587-21298.png" alt="Social Media Content Design - Freelancer">
+      <img loading="lazy" src="assets/details/587-21299.png" alt="Social Media Content Design - Freelancer">
+      <img loading="lazy" src="assets/details/587-21300.jpg" alt="Social Media Content Design - Freelancer">
+      <img loading="lazy" src="assets/details/587-21301.jpg" alt="Social Media Content Design - Freelancer">
+      <img loading="lazy" src="assets/details/587-21302.jpg" alt="Social Media Content Design - Freelancer">
+    </article>
+  </template>
+
+  <script src="detail-data.js"></script>
+  <script src="detail-layout.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
